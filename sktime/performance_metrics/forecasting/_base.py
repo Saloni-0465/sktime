@@ -990,7 +990,10 @@ def make_forecasting_scorer(
     ----------
     func : callable
         Callable to convert to a forecasting scorer class.
-        Score function (or loss function) with signature ``func(y, y_pred, **kwargs)``.
+        Score function (or loss function) whose first two parameters are the
+        ground truth and forecast, named ``y_true`` and ``y_pred`` (sktime calls
+        it as ``func(y_true=..., y_pred=..., **kwargs)``). Additional keyword
+        arguments may be passed through from ``evaluate`` when supported by ``func``.
 
     name : str, default=None
         Name to use for the forecasting scorer loss class.
