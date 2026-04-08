@@ -983,8 +983,18 @@ def test_load_from_long_incorrect_format(tmpdir):
 @pytest.mark.parametrize(
     "column_dtypes",
     [
-        {"case_id": "int32", "dim_id": "int32", "reading_id": "int32", "value": "float32"},
-        {"case_id": "Int64", "dim_id": "Int64", "reading_id": "Int64", "value": "float32"},
+        {
+            "case_id": "int32",
+            "dim_id": "int32",
+            "reading_id": "int32",
+            "value": "float32",
+        },
+        {
+            "case_id": "Int64",
+            "dim_id": "Int64",
+            "reading_id": "Int64",
+            "value": "float32",
+        },
     ],
 )
 def test_load_from_long_accepts_compatible_dtypes(tmpdir, column_dtypes):
